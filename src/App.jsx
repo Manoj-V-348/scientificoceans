@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import headerImg from "./assets/mainLogo.png";
 
 import "./index.css"
@@ -18,12 +20,75 @@ import product3 from "./assets/prod3.png";
 import product4 from "./assets/prod4.png";
 import thumbsup from "./assets/thumbsup.png";
 import mail from "./assets/icons/mail.png";
+import tick from "./assets/icons/tick.png";
+import physics1 from "./assets/physics1.png";
+import physics2 from "./assets/physics2.png";
+import physics3 from "./assets/physics3.png";
+import chemistry1 from "./assets/chemistry1.png";
+import chemistry2 from "./assets/chemistry2.png";
+import chemistry3 from "./assets/chemistry3.png";
+import biology1 from "./assets/biology1.png";
+import biology2 from "./assets/biology2.png";
+import biology3 from "./assets/biology3.png";
+import phone from "./assets/phone.png";
 
 function App() {
+  const [physics, setPhysics] = useState(true);
+  const [chemistry, setChemistry] = useState(false);
+  const [biology, setBiology] = useState(false);
+
+  const physicsButton = physics ? 
+  {
+    color: "#ffffff",
+    backgroundColor: "#303030"
+  } :
+  {
+    opacity: 1
+  };
+
+  const chemistryButton = chemistry ? 
+  {
+    color: "#ffffff",
+    backgroundColor: "#303030"
+  } :
+  {
+    opacity: 1
+  };
+
+  const biologyButton = biology ? 
+  {
+    color: "#ffffff",
+    backgroundColor: "#303030"
+  } :
+  {
+    opacity: 1
+  };
+
+  const physicsDetails = physics ? { opacity: 1, display: "flex" } : { opacity: 0, display: "none" };
+  const chemistryDetails = chemistry ? { opacity: 1, display: "flex" } : { opacity: 0, display: "none" };
+  const biologyDetails = biology ? { opacity: 1, display: "flex" } : { opacity: 0, display: "none" };
 
   var timenow = new Date();
 
   var currentYear = timenow.getFullYear();
+
+  function togglePhysics(){
+    setPhysics(true);
+    setChemistry(false);
+    setBiology(false);
+  }
+
+  function toggleChemistry(){
+    setPhysics(false);
+    setChemistry(true);
+    setBiology(false);
+  }
+
+  function toggleBiology(){
+    setPhysics(false);
+    setChemistry(false);
+    setBiology(true);
+  }
 
   return (
     <>
@@ -82,6 +147,185 @@ function App() {
         </div>
       </section>  
 
+      <section id="listing" className="vertical--flex center">
+        <p><span className="bold">Our Products</span> ( All Elementary, X, XI, XII STD Syllabus )</p>
+
+        <div className="options--container horizontal--flex">
+          <div className="options horizontal--flex center" style={physicsButton} onClick={togglePhysics}>
+            <p>Physics Apparatus</p>
+          </div>
+          
+          <div className="options horizontal--flex center" style={chemistryButton} onClick={toggleChemistry}>
+            <p>Chemical Reagents</p>
+          </div>
+
+          <div className="options horizontal--flex center" style={biologyButton} onClick={toggleBiology}>
+            <p>Biology and others</p>
+          </div>
+        </div>
+
+        <div className="options--points horizontal--flex">
+          <div className="points--area physics--points" style={physicsDetails}>
+            <div className="point horizontal--flex ">
+              <img src={tick} alt="tick" />
+              <p>Laboratory Glassware <span>(Borosilicate glass beakers, Conical flask, Funnel, Burettes, Test tubes etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Lab Metal ware <span>(Bunsen burner, Spatula, Stands, Clamps, Test tube holders etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Rubberware <span>(Corks, Pipette bulb, Rubber tubes, Teats etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Porcelainware <span>(China dish, Crucible, Mortar & Pestle etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Woodenware <span>(Burette Stand, Dissection board, Mercury/Sodium lamp stand etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Electronic apparatus for Experiments <span>(De morgan's theorem, PN junction, NPN transistor etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Mechanical experiment apparatus <span>(Stoke's Apparatus, Sonometer etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Electrical experiment apparatus <span>(Ohm's law, Ammeter, Voltmeter etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Plastic Labware <span>(Beakers, Reagent bottle, Pipette & Test tube stand etc.)</span></p>
+            </div>
+          </div>
+
+          <div className="points--area chemistry--points" style={chemistryDetails}>
+            <div className="point horizontal--flex ">
+              <img src={tick} alt="tick" />
+              <p>Organic Reagents <span>(Acetone, Benzene, Ethyl Acetate etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Inorganic Reagents <span>(Hydrochloric Acid, Sodium Chloride, Sulfuric Acid etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Preparative Reagents <span>(Sodium Hydroxide, Ammonium Sulfate etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Analytical Reagents <span>(Silver Nitrate, Potassium Permanganate etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Indicator Reagents <span>(Phenolphthalein, Methyl Orange, Litmus paper, Ph paper etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Salts for Experiments covering Practical Syllabus <span>( Full set of chemical reagents available.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>High Quality HansLab chemicals delivered.<span>(Ohm's law, Ammeter, Voltmeter etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Distilled Water for the Experiments <span>(Upto 100 Litres delivered at your doorstep.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>High concentrated acids for titrations <span>(HCl, H2SO4 etc.)</span></p>
+            </div>
+          </div>
+
+          <div className="points--area biology--points" style={biologyDetails}>
+            <div className="point horizontal--flex ">
+              <img src={tick} alt="tick" />
+              <p>Microscope <span>(Dissecting/ Compound/ Pathological , with eye pieces, obejctive etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Lab equipments <span>(Micro prepared Slides, Cotton roll, Dissection hammer, Forceps etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Fibre Glass Models <span>(Human organs, Skeleton, Parts of plant etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Model Photographs <span>(Full X , XI , XII STD Syllabus )</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Slides and Specimen <span>(Ascaris, Dicot stem, Testis, Hydra etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>General Charts <span>( All Geography charts, Atmosphere, Solar system, Water cycle etc.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Superior Quality models and Charts delivered at your place.<span>( Full set of chemical reagents available.)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>Multicolor Charts <span>(Zoology, Botany, Physics and Chemistry as per Syllabus)</span></p>
+            </div>
+
+            <div className="point horizontal--flex">
+              <img src={tick} alt="tick" />
+              <p>All Maths Lab items available <span>(Shapes and color, Sand clock etc.)</span></p>
+            </div>
+          </div>
+
+          <div className="images--area physics--image" style={physicsDetails} id="imagesPoint">
+            <img src={physics1} alt="physics--image" className="image1" />
+            <img src={physics2} alt="physics--image" className="image2" />
+            <img src={physics3} alt="physics--image" className="image3" />
+          </div>
+
+          <div className="images--area physics--image" style={chemistryDetails} id="imagesPoint">
+            <img src={chemistry1} alt="chemistry--image" className="image1 chem1" />
+            <img src={chemistry2} alt="chemistry--image" className="image2 chem2" />
+            <img src={chemistry3} alt="chemistry--image" className="image3 chem3" />
+          </div>
+
+          <div className="images--area physics--image" style={biologyDetails} id="imagesPoint">
+            <img src={biology1} alt="biology--image" className="image1" />
+            <img src={biology2} alt="biology--image" className="image2" />
+            <img src={biology3} alt="biology--image" className="image3" />
+          </div>
+        </div>
+      </section>
+
       <section id="faq" className="vertical--flex center">
         <p className="section--heading">
           Science. <span className="logocolor">Supplies.</span> Solutions.
@@ -105,7 +349,7 @@ function App() {
 
       <section id="contact" className="vertical--flex center">
         <p>Having a Bulk order? Contact us at</p>
-        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSHwrzjnCCpnSGVGPVXFDLRKrLKLCSJwzTnbWSctkjZSbNDMqZZzlqTDzLBmmxvcqgCnvjvg" 
+        <a href="https://mail.google.com/mail/?to=scientificoceanic@gmail.com#compose" target="_blank" 
         className="horizontal--flex center mail">
           <p>scientificoceanic@gmail.com</p>
           <img src={mail} alt="mail" />

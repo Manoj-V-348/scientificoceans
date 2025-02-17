@@ -87,7 +87,7 @@ header > a{
     grid-row: 3 / -1;
     grid-column: 4 / -1;
 }
-#products, #faq, footer{
+#products, #faq, footer, #listing{
     padding: 80px 120px 80px 120px;
     gap: 30px;
 }
@@ -153,4 +153,234 @@ footer{
 }
 footer > p{
     font-size: 22px;
+}
+#listing > p{
+    font-size: 40px;
+    text-align: center;
+}
+.options--container{
+    border-radius: 24px;
+    height: 75px;
+    padding: 15px;
+    width: 1024px;
+    background-color: #E2D9FF;
+    justify-content: space-between;
+}
+.options--points{
+    gap: 50px;
+}
+.options{
+    color: #303030;
+    background-color: white;
+    height: 49px;
+    width: 236px;
+    border-radius: 16px;
+    text-align: center;
+}
+.options:hover{
+    background-color: #303030;
+    color: white;
+    cursor: pointer;
+}
+.options > p{
+    font-size: 24px;
+}
+.points--area{
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.point{
+    gap: 10px;
+}
+.point > img{
+    height: 27px;
+    width: 27px;
+}
+.point > p{
+    font-size: 22px;
+    line-height: 27px;
+}
+.point > p > span{
+    font-size: 18px;
+}
+.images--area{
+    position: relative;
+    width: 350px;
+    height: 500px;
+}
+.images--area > img{
+    height: auto;
+    width: 171px;
+    position: absolute;
+}
+.image1{
+    top: 0;
+    left: 0;
+}
+.image2{
+    top: 130px;
+    right: 0;
+}
+.image3{
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 600px) {
+    header{
+        height: 69px;
+    }
+    header > .mobile{
+        display: none;
+    }
+    header > img{
+        height: 18px;
+    }
+    header > a{
+        font-size: 14px;
+    }
+    .carousel--container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .carousel--left{
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .carousel--left > img{
+        height: auto;
+        width: 100px;
+    }
+    .carousel--left > p{
+        font-size: 12px;
+        width: 100%;
+    }
+    .carousel--left > .subheading{
+        font-size: 16px;
+        width: 100%;
+    }
+    .carousel--left > div{
+        width: 280px;
+        height: 41px;
+        font-size: 14px;
+    }
+    .carousel--right{
+        width: 305px;
+        height: 196px;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-rows: repeat(3, 60px);
+        grid-template-columns: repeat(4, 70px);
+    }
+    .carousel--container, #products, #faq, footer, #listing{
+        padding: 35px;
+        gap: 15px;
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+    .section--heading{
+        font-size: 16px;
+    }
+    .about--description, #listing > p{
+        font-size: 12px;
+    }
+    .products--images{
+        width: 297px;
+        height: 66px;
+    }
+    .products--images > img{
+        width: 70px;
+        height: auto;
+    }
+    .options--container{
+        width: 348px;
+        height: 42px;
+    }
+    .options{
+        width: 91px;
+        height: 18px;
+    }
+    .options > p{
+        font-size: 9px;
+    }
+    .point > p{
+        font-size: 12px;
+        line-height: 13.5px;
+    }
+    .point > p > span{
+        font-size: 11px;
+    }
+    .options--points{
+        flex-direction: column;
+    }
+    .images--area{
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .images--area > img{
+        position: static;
+        height: auto;
+        width: 100px;
+    }
+    #faq{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .faq--question, #contact > p, #contact > a{
+        font-size: 16px;
+        margin: 0;
+    }
+    .faq--answer{
+        font-size: 12px;
+        margin: 0px 0px 10px 0px;
+    }
+    .faq--container > .image--container{
+        width: 180px;
+        padding: 0;
+        margin: 0;
+    }
+    .faq--wrapper{
+        padding-right: 10px;
+    }
+    #contact > p{
+        margin-top: 50px;
+    }
+    #contact > a{
+        gap: 4px;
+    }
+    #contact > a > img{
+        width: 20px;
+        height: auto;
+    }
+    #contact{
+        height: 300px;
+    }
+    #contact > .mobile{
+        border-radius: 16px;
+        height: 55px;
+        width: 300px;
+        margin: 15px;
+    }
+    footer.horizontal--flex{
+        flex-direction: column;
+        height: 250px;
+        padding: 30px;
+    }
+    .company--container > p, .contactus--container > p{
+        font-size: 12px;
+    }
+    .company--container .company, .contactus--container .contactus{
+        font-size: 16px;
+    }
+    p.copyright{
+        font-size: 10px;
+    }
 }
